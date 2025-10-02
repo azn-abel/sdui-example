@@ -47,8 +47,11 @@ def read_root(path: str):
         raise HTTPException(
             status_code=400, detail="Query parameter 'path' is required"
         )
+
     if path[-1] == "/" and path != "/":
         path = path[:-1]
+
     if path not in UI_MAP:
         path = "/not-found"
+
     return UI_MAP.get(path)
