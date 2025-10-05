@@ -8,25 +8,33 @@ export type SDUISchema = {
 export type SDUIComponent = {
   type: string;
   content?: string;
+  props?: Record<string, any>;
   children?: SDUIComponent[];
 };
 
 const renderComponent = (component: SDUIComponent): React.ReactNode => {
-  const { type, content, children } = component;
+  const { type, content, children, props } = component;
 
   switch (type) {
     case "text":
-      return <p>{content}</p>;
+      return <p {...props}>{content}</p>;
 
     case "heading":
-      return <h2>{content}</h2>;
+      return <h2 {...props}>{content}</h2>;
 
     case "button":
-      return <button>{content}</button>;
+      return <button {...props}>{content}</button>;
 
     case "container":
       return (
-        <div style={{ display: "flex", flexDirection: "row", gap: "1rem" }}>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "1rem",
+            ...props?.style,
+          }}
+        >
           {children?.map((child, idx) => (
             <React.Fragment key={idx}>{renderComponent(child)}</React.Fragment>
           ))}

@@ -19,10 +19,15 @@ UI_MAP = {
     "/": {
         "title": "Home",
         "components": [
-            {"type": "text", "content": "Welcome to the Home Page"},
+            {
+                "type": "text",
+                "content": "Welcome to the Home Page",
+                "props": {"style": {"fontSize": 24, "fontFamily": "Arial"}},
+            },
             {"type": "text", "content": "Welcome to the Home Page"},
             {
                 "type": "container",
+                "props": {"style": {"flexDirection": "column"}},
                 "children": [
                     {"type": "text", "content": "This is inside a container"},
                     {"type": "text", "content": "This is inside a container"},
