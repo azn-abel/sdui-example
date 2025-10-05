@@ -49,7 +49,7 @@ const renderComponent = (component: SDUIComponent): React.ReactNode => {
 export const SDUIRenderer: React.FC<{ schema: SDUISchema }> = ({ schema }) => {
   document.title = schema.title;
   return (
-    <div>
+    <div id="content">
       <h1>{schema.title}</h1>
       {schema.components.map((component, idx) => (
         <React.Fragment key={idx}>{renderComponent(component)}</React.Fragment>
@@ -83,6 +83,6 @@ export const SDUIBase: React.FC = () => {
   if (schema) {
     return <SDUIRenderer schema={schema} />;
   } else {
-    return <p>Loading...</p>;
+    return <></>;
   }
 };

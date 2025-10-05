@@ -22,7 +22,7 @@ UI_MAP = {
             {
                 "type": "text",
                 "content": "Welcome to the Home Page",
-                "props": {"style": {"fontSize": 24, "fontFamily": "Arial"}},
+                "props": {"style": {"fontSize": 24, "fontFamily": "Times New Roman"}},
             },
             {"type": "text", "content": "Welcome to the Home Page"},
             {
