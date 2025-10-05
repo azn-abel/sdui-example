@@ -33,6 +33,22 @@ UI_MAP = {
                     {"type": "text", "content": "This is inside a container"},
                 ],
             },
+            {
+                "type": "hstack",
+                "props": {"gap": 12, "justify": "space-around"},
+                "children": [
+                    {"type": "text", "content": "This is inside an HStack"},
+                    {"type": "text", "content": "This is inside an HStack "},
+                ],
+            },
+            {
+                "type": "vstack",
+                "props": {"gap": 12, "justify": "space-around"},
+                "children": [
+                    {"type": "text", "content": "This is inside an VStack"},
+                    {"type": "text", "content": "This is inside an VStack "},
+                ],
+            },
         ],
     },
     "/about": {

@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import HStack from "./components/base-ui/HStack";
+import VStack from "./components/base-ui/VStack";
 
 export type SDUISchema = {
   title: string;
@@ -24,6 +26,24 @@ const renderComponent = (component: SDUIComponent): React.ReactNode => {
 
     case "button":
       return <button {...props}>{content}</button>;
+
+    case "hstack":
+      return (
+        <HStack {...props}>
+          {children?.map((child, idx) => (
+            <React.Fragment key={idx}>{renderComponent(child)}</React.Fragment>
+          ))}
+        </HStack>
+      );
+
+    case "vstack":
+      return (
+        <VStack {...props}>
+          {children?.map((child, idx) => (
+            <React.Fragment key={idx}>{renderComponent(child)}</React.Fragment>
+          ))}
+        </VStack>
+      );
 
     case "container":
       return (
